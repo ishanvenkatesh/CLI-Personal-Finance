@@ -9,6 +9,14 @@ def main():
             category = input("Enter expense category: ")
             cost = float(input("Enter expense cost: "))
             add_expense([name, category, cost])
+            print("Expense added.\n")
+        elif choice == 2:
+            view_expenses()
+        elif choice == 3:
+            method = input("Search by name or category: ")
+            search = input("What is your search query: ")
+            print(search_expenses(search, method))
+            
 
 def display_menu():
     print("==== Personal Finance Tracker ====\n")
