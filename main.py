@@ -16,15 +16,25 @@ def add_expense(expense):
     expenses.append(expense)
 
 def view_expenses():
+    """Lists out all user expenses"""
     for e in expenses:
         for i in e:
             print(i)
         print("")
 
-def search_expenses():
-    pass
+def search_expenses(search, method):
+    """Search parameter is the query. Method is searching by name or category"""
+    if method.lower() == "name":
+        for e in expenses:
+            if e[0].lower() == search.lower():
+                print(e)
+    elif method.lower() == "category":
+        for e in expenses:
+            if e[1].lower() == search.lower():
+                print(e)
+    print("")
+
+        
 
 def calculate_total():
     pass
-
-view_expenses()
