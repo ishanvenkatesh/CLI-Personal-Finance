@@ -24,17 +24,30 @@ def view_expenses():
 
 def search_expenses(search, method):
     """Search parameter is the query. Method is searching by name or category"""
+    result = []
     if method.lower() == "name":
         for e in expenses:
             if e[0].lower() == search.lower():
-                print(e)
+                result.append(e)
     elif method.lower() == "category":
         for e in expenses:
             if e[1].lower() == search.lower():
-                print(e)
-    print("")
-
+                result.append(e)
+    for e in result:
+        print(str(e) + "\n")
         
 
 def calculate_total():
-    pass
+    """Calculates the total expenses"""
+    sum = 0
+    for e in expenses:
+        sum += e[2]
+    return sum
+
+
+add_expense(["Gas", "Transportation", 12.00])
+view_expenses()
+print(search_expenses("Gas", "name"))
+print(calculate_total())
+
+
