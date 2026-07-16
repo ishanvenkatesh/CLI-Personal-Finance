@@ -1,4 +1,4 @@
-expenses = []
+expenses = [["Chipotle", "Food", 18.52]]
 
 def main():
     pass
@@ -16,7 +16,10 @@ def add_expense(expense):
     expenses.append(expense)
 
 def view_expenses():
-    pass
+    for e in expenses:
+        for i in e:
+            print(i)
+        print("")
 
 def search_expenses():
     pass
@@ -24,3 +27,4 @@ def search_expenses():
 def calculate_total():
     pass
 
+view_expenses()
