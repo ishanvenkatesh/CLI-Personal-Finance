@@ -1,7 +1,14 @@
-expenses = [["Chipotle", "Food", 18.52]]
+expenses = []
 
 def main():
-    pass
+    while True:
+        display_menu()
+        choice =  input("Enter a num: ")
+        if choice == 1:
+            name = input("Enter expense name: ")
+            category = input("Enter expense category: ")
+            cost = float(input("Enter expense cost: "))
+            add_expense([name, category, cost])
 
 def display_menu():
     print("==== Personal Finance Tracker ====\n")
@@ -45,9 +52,5 @@ def calculate_total():
     return sum
 
 
-add_expense(["Gas", "Transportation", 12.00])
-view_expenses()
-print(search_expenses("Gas", "name"))
-print(calculate_total())
 
 
