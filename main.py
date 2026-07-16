@@ -1,5 +1,7 @@
+expenses = []
+
 def main():
-    expenses = []
+    pass
 
 def display_menu():
     print("==== Personal Finance Tracker ====\n")
@@ -9,8 +11,9 @@ def display_menu():
     print("4. Total Spending")
     print("5. Quit")
 
-def add_expense():
-    pass
+def add_expense(expense):
+    """Takes in list parameter expense and adds it to the list of expenses."""
+    expenses.append(expense)
 
 def view_expenses():
     pass
