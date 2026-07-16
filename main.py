@@ -25,6 +25,8 @@ def main():
         elif choice == 5:
             print("Goodbye.")
             break
+        else:
+            print("Not a valid input.\n")
 
 
 def display_menu():
@@ -41,9 +43,13 @@ def add_expense(expense):
 
 def view_expenses():
     """Lists out all user expenses"""
-    for e in expenses:
-        print(e)
-        print("")
+    i = 1
+    for e in expenses:     
+        print(str(i))
+        print(f"Name: {e[0]}")
+        print(f"Category: {e[1]}")
+        print(f"Cost: {e[2]}\n")
+        i += 1
 
 def search_expenses(search, method):
     """Search parameter is the query. Method is searching by name or category"""
@@ -56,15 +62,16 @@ def search_expenses(search, method):
         for e in expenses:
             if e[1].lower() == search.lower():
                 result.append(e)
-
+    if result == []:
+        return "No matching expenses found"
     return result    
 
 def calculate_total():
     """Calculates the total expenses"""
-    sum = 0
+    total = 0
     for e in expenses:
-        sum += e[2]
-    return sum
+        total += e[2]
+    return total
 
 
 main()
