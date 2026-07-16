@@ -9,5 +9,15 @@ def display_menu():
     print("4. Total Spending")
     print("5. Quit")
 
+def add_expense():
+    pass
 
-display_menu()
+def view_expenses():
+    pass
+
+def search_expenses():
+    pass
+
+def calculate_total():
+    pass
+
